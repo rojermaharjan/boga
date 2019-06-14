@@ -1,0 +1,90 @@
+<div class="bs-overlay"></div>
+<div class="bs-root">
+  <div class="bs-cont d-flex flex-row">
+    <div class="bs-content">
+      <ul class="multilang-cont p-0 m-0">
+        <li class="lang-item">
+          <button class="lang active">
+            en
+          </button>
+        </li>
+        <li class="lang-item">
+          <button class="lang">
+            id
+          </button>
+        </li>
+        <li class="lang-item"></li>
+      </ul>
+      <ul class="sidebar-menus-cont p-0">
+        <li>
+          <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" title="Home" (click)="toggleSidebar.emit()">
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/profile" routerLinkActive="active" title="Profile" (click)="toggleSidebar.emit()">
+            <span>Profile</span>
+          </a>
+        </li>
+      </ul>
+      <div class="sidebar-socmed">
+        <ul class="socmed-item-cont d-flex flex-row p-0 m-0">
+          <li>
+            <a target="_blank" href="https://www.facebook.com/bogagroup/" title="Facebook">
+              <i class="bg-icon d-block w-16 h-16"
+                style="background-image: url('/assets/icons/facebook-f-brands.svg');"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.instagram.com/bogagroup_id/" title="Instagram">
+              <i class="bg-icon d-block w-16 h-16"
+                style="background-image: url('/assets/icons/instagram-brands.svg');"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.youtube.com/user/BogaGroupIndonesia" title="Youtube">
+              <i class="bg-icon d-block w-16 h-16"
+                style="background-image: url('/assets/icons/youtube-brands.svg');"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://twitter.com/bogagroup_promo" title="Twitter">
+              <i class="bg-icon d-block w-16 h-16"
+                style="background-image: url('/assets/icons/twitter-brands.svg');"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-boga-description">
+        <div class="title">
+          <p>Boga Group</p>
+        </div>
+
+        <div class="content overflow-h">
+          <p>
+            Jawlakhel 001 - 006 <br>
+            Lalitpur, Bagmati <br>
+            Province 3 Nepal <br>
+          </p>
+          <p>
+            Email : <a href="mailto:info@boga.com">info@boga.com</a> <br>
+            Phone : <a href="tel:+9779800000000">+977-9800000000</a> <br>
+            <a href="http://www.example.com">www.example.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="bs-close">
+      <div class="boga-line"></div>
+      <div class="close-btn">
+        <button (click)="toggleSidebar.emit()">
+          <svg viewBox="0 0 15.642 15.642">
+            <path
+              d="M8.882 7.821l6.541-6.541A.75.75 0 1 0 14.362.219L7.821 6.76 1.28.22A.75.75 0 1 0 .219 1.281L6.76 7.822l-6.54 6.54a.75.75 0 0 0 1.06 1.061l6.541-6.541 6.541 6.541a.75.75 0 1 0 1.06-1.061l-6.54-6.541z"
+              fill-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,341 @@
+.bs-overlay {
+  position: fixed;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(38, 43, 58, 0.75);
+  opacity: 0;
+  visibility: hidden;
+  backface-visibility: hidden;
+  transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: 99;
+}
+.bs-root {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 37.5%;
+  height: 100%;
+  background: rgba(38, 43, 58, 0.95);
+  opacity: 0;
+  visibility: hidden;
+  backface-visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+  transform: translate3d(100%, 0, 0);
+  z-index: 100;
+  .bs-cont {
+    .bs-content {
+      flex: 0 0 85%;
+      width: 85%;
+      max-width: 85%;
+      padding: 80px;
+      overflow-y: auto;
+      height: 100vh;
+      margin-right: -20px;
+      .multilang-cont {
+        display: block;
+        position: absolute;
+        left: 24px;
+        top: 34px;
+        .lang-item {
+          margin-bottom: 10px;
+          .lang {
+            position: relative;
+            color: #fff;
+            font-size: 14px;
+            text-transform: uppercase;
+            // transition: all cubic-bezier(0.55, 0, 0.1, 1) 0.5s;
+            width: 30px;
+            overflow: hidden;
+            opacity: 0;
+            padding-bottom: 10px;
+            transform: translateY(101%);
+            transition: color 1s cubic-bezier(0.19, 1, 0.22, 1), transform 1s cubic-bezier(0.19, 1, 0.22, 1),
+              opacity 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+            &:after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              height: 1px;
+              width: 0;
+              background: #fff;
+              transition: all cubic-bezier(0.55, 0, 0.1, 1) 0.5s;
+            }
+            &:hover,
+            &.active {
+              &:after {
+                width: 100%;
+              }
+            }
+          }
+          &:nth-of-type(1) button {
+            transition-delay: 0.5s;
+          }
+          &:nth-of-type(2) button {
+            transition-delay: 0.55s;
+          }
+        }
+      }
+      .sidebar-menus-cont {
+        margin-top: 60px;
+        margin-bottom: 100px;
+        li {
+          padding: 10px 0;
+          overflow: hidden;
+          transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+          a {
+            transform: translateY(101%);
+            opacity: 0;
+            transition: color 0.1s ease, transform 1s cubic-bezier(0.19, 1, 0.22, 1),
+              opacity 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+            display: block;
+            span {
+              text-transform: uppercase;
+              color: #727272;
+              font-size: 16px;
+              letter-spacing: 3.5px;
+              font-weight: 400;
+              transition: color 1s cubic-bezier(0.19, 1, 0.22, 1);
+            }
+            &:hover,
+            &.active {
+              span {
+                color: #fff;
+              }
+            }
+          }
+          $delay: 0.45;
+          @for $index from 1 through 8 {
+            $delay: $delay + 0.05;
+            &:nth-of-type(#{$index}) a {
+              transition-delay: #{$delay}s;
+            }
+          }
+        }
+      }
+      .sidebar-socmed {
+        margin-bottom: 20px;
+        .socmed-item-cont {
+          li {
+            overflow: hidden;
+            margin-right: 14px;
+            transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+            a {
+              transform: translateY(101%);
+              opacity: 0;
+              display: block;
+              transition: color 1s cubic-bezier(0.19, 1, 0.22, 1), transform 1s cubic-bezier(0.19, 1, 0.22, 1),
+                opacity 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+            }
+            $delay: 0.45;
+            @for $index from 1 through 8 {
+              $delay: $delay + 0.05;
+              &:nth-of-type(#{$index}) a {
+                transition-delay: #{$delay}s;
+              }
+            }
+          }
+        }
+      }
+      .sidebar-boga-description {
+        .title {
+          margin-bottom: 5px;
+          overflow: hidden;
+          p {
+            color: #fff;
+            font-weight: 400;
+            line-height: 1.6;
+            font-size: 14px;
+            margin: 0;
+            opacity: 0;
+            transform: translateY(101%);
+            transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+            transition-delay: 0.7s;
+          }
+        }
+        .content {
+          &:first-child {
+            margin-top: 0;
+          }
+          p {
+            opacity: 0;
+            color: #fff;
+            font-size: 14px;
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 20px;
+            transform: translateY(101%);
+            transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+            transition-delay: 0.7s;
+          }
+          a {
+            color: #fff;
+            font-size: 14px;
+            line-height: 1.8;
+            font-weight: 300;
+          }
+        }
+      }
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    .bs-close {
+      background: #292d3d;
+      min-height: 100vh;
+      flex: 0 0 15%;
+      width: 15%;
+      max-width: 15%;
+      display: flex;
+      justify-content: center;
+      padding-top: 60px;
+      position: relative;
+      .boga-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 0;
+        background: #fff;
+        opacity: 0;
+        transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+        transition-delay: 0.35s;
+      }
+      .close-btn {
+        height: 20px;
+        margin-left: 20px;
+        button {
+          opacity: 0;
+          transform: rotate(135deg);
+          transition: all 0.4s ease;
+          transition-delay: 0.2s;
+          svg,
+          path {
+            fill: #fff;
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+:host(.active) {
+  .bs-overlay,
+  .bs-root {
+    opacity: 1;
+    visibility: visible;
+    backface-visibility: visible;
+  }
+  .bs-root {
+    transform: translate3D(0, 0, 0);
+    .bs-cont {
+      .bs-content {
+        .multilang-cont {
+          .lang-item {
+            .lang {
+              transform: translateY(0);
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+        .sidebar-menus-cont {
+          li {
+            a {
+              transform: translateY(0);
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+        .sidebar-socmed {
+          .socmed-item-cont {
+            li {
+              a {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+              }
+            }
+          }
+        }
+        .sidebar-boga-description {
+          .title p {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          .content p {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+      .bs-close {
+        .boga-line {
+          height: 100vh;
+          opacity: 1;
+          transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+          transition-delay: 0.5s;
+        }
+        .close-btn {
+          button {
+            opacity: 1;
+            transform: rotate(0);
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 767px) and (min-width: 320px) {
+  .bs-root {
+    width: 85%;
+    .bs-cont {
+      .bs-content {
+        flex: 0 0 80%;
+        width: 80%;
+        max-width: 80%;
+        padding: 50px 24px;
+        .multilang-cont {
+          position: relative;
+          top: 0;
+          left: 0;
+          .lang-item .lang {
+            width: 45px;
+          }
+        }
+        .sidebar-menus-cont {
+          margin-top: 30px;
+          margin-bottom: 30px;
+          li {
+            padding: 6px 0;
+            a span {
+              font-size: 14px;
+              font-weight: 400;
+              letter-spacing: 1.5px;
+            }
+          }
+        }
+        .sidebar-boga-description {
+          .title span,
+          .title p,
+          .content p,
+          .content a {
+            font-size: 12px;
+          }
+        }
+      }
+      .bs-close {
+        flex: 0 0 20%;
+        width: 20%;
+        max-width: 20%;
+        padding-top: 30px;
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<app-parallax [title]="title" [heroImage]="heroImage"></app-parallax>
+<div class="parallax-with-content-root position-relative overflow-h">
+  <div class="parallax-overlay position-absolute w-100-p h-100-p z-1"></div>
+  <div class="parallax-scroll-indicator-cont position-absolute h-100-p z-2">
+    <div class="parallax-scroll-indicator-in-content wow lineInDown" data-wow-duration="1s" data-wow-delay="0.3s"></div>
+  </div>
+  <div class="parallax-bg" style="transform: scale(1.8);">
+    <div class="parallax-image" [ngStyle]="{'background-image': overviewImage}"></div>
+  </div>
+  <div class="parallax-content-cont position-absolute z-10 mx-auto">
+    <div class="parallax-title overflow-h">
+      <h2 class="font-size-50 wow fadeInUp2 m-0" data-wow-duration="0.6s" data-wow-delay="0.2s">Company Overview.</h2>
+    </div>
+    <div class="overflow-h">
+      <div class="parallax-line wow lineInLeft my-20" data-wow-duration="1s" data-wow-delay="0.2s"></div>
+    </div>
+    <div class="parallax-description wow fadeInUp overflow-h mt-48">
+      <div>
+        <div>
+          By early 2018, Boga Group operates 154 restaurants with more than 5.000 highly trained employees, and the
+          number of outlets is expected to become 180 by the end of 2018.&nbsp;
+        </div>
+        <div>
+          <br>This rapid expansion is thanks to
+          the group’s commitment to use only high quality ingredients coupled with exceptional service. These two
+          characteristics distinguish Boga Group from the rest of the industry, and drive each of its restaurant brands
+          to understand and fulfill customers’ expectations through memorable dining sensations.&nbsp;
+        </div>
+        <div>
+          <br>
+          Boga Group’s restaurants currently include 15 Bakerzin, 52 Pepper Lunch, 7 Paradise Dynasty, 1 Paradise Inn, 1
+          Master
+          Wok, 20 Shaburi, 11 Kintan Buffet and 2 Onokabe outlets, with more opening in 2018. These restaurants are
+          spread
+          across Jakarta, Bandung, Surabaya, Yogyakarta, Medan, Batam, Pekanbaru, Balikpapan, Palembang, Makassar,
+          Samarinda, Manado, and Bali. To cater to corporate and personal events, Boga Group also established a premium
+          catering service, known as Boga Catering.
+        </div>
+        <div>
+          <br>Boga Group’s food and beverage business has grown
+          exponentially every year, with a 10% year-on-year sales growth in 2016 translating to an annual revenue of USD
+          150 million. With this growth rate, Boga Group will remain as one of the giants in the Indonesian F&amp;B
+          Industry.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="product-cont">
+  <div class="product-item">
+    <boga-product-item class="d-block"></boga-product-item>
+    <boga-product-item class="d-block" [rtl]="true"></boga-product-item>
+  </div>
+</div>

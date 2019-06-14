@@ -1,0 +1,18 @@
+<div class="header-root position-absolute w-100-p z-9">
+  <div class="header-cont d-flex align-items-center justify-content-between">
+    <div class="logo-cont h-100-p d-flex align-items-center">
+      <a class="header-logo-link position-relative overflow-h wow fadeInUp" routerLink="/" data-wow-duration="1s" data-wow-delay="1s" style="visibility: hidden;">
+        <img alt="Logo" class="logo h-100" src="/assets/img/logo.png">
+      </a>
+    </div>
+    <div class="sidemenu-cont h-100-p d-flex align-items-center">
+      <div class="sidemenu w-36 d-flex align-items-end flex-column cursor-pointer position-fixed z-9">
+        <div class="burger-menu w-100-p overflow-h" (click)="toggleSidebar.emit()">
+          <div class="burger-patty"></div>
+          <div class="burger-patty"></div>
+          <div class="burger-patty"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

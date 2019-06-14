@@ -1,0 +1,40 @@
+.header-root {
+  .header-cont {
+    padding: 30px 50px;
+  }
+}
+.sidemenu {
+  top: 58px;
+  right: 50px;
+  .burger-patty {
+    height: 2px;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 8px;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    &:nth-child(2) {
+      width: 70%;
+    }
+  }
+  &:hover {
+    .burger-patty:nth-child(2) {
+      width: 100%;
+    }
+  }
+}
+@media only screen and (max-width: 767px) and (min-width: 320px) {
+  .header-root {
+    .header-cont {
+      padding: 24px;
+    }
+  }
+  .sidemenu {
+    top: 42px;
+    right: 24px;
+    .burger-menu {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+}

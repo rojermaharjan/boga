@@ -1,0 +1,208 @@
+$primary: #fbf8f3;
+$accent: #b01f24;
+.boga-timeline-item-root {
+  .boga-timeline-item-cont {
+    .timeline-line {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 150px;
+      width: 1px;
+      height: 100%;
+      background: #4a4a4a;
+      transform: translate3d(-50%, 0, 0);
+      z-index: 1;
+    }
+    .timeline-year {
+      margin-bottom: -125px;
+      z-index: 0;
+      div {
+        display: inline-flex;
+        color: #f3f3f3;
+        font-size: 288px;
+        font-family: "Aleo", serif;
+        letter-spacing: 21.3px;
+        overflow: hidden;
+        z-index: 0;
+        margin: 0;
+      }
+    }
+    .timeline-content-cont {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      .content-text,
+      .content-bg-image {
+        flex: 0 0 50%;
+        width: 50%;
+      }
+      .content-text {
+        order: 2;
+        .content-title-body {
+          max-width: 450px;
+          > div {
+            margin-bottom: 50px;
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+          .content-title {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+            z-index: 2;
+            span {
+              color: $accent;
+              font-size: 24px;
+              line-height: 1.8;
+              font-family: "Playfair Display", sans-serif;
+              letter-spacing: 1.77px;
+              z-index: 2;
+            }
+            .accent-line {
+              width: 80px;
+              height: 2px;
+              background: $accent;
+              margin-top: 10px;
+              z-index: 2;
+            }
+          }
+          .content-body {
+            max-width: 300px;
+            p {
+              font-size: 14px;
+              color: #4a4a4a;
+              line-height: 1.8;
+              position: relative;
+              z-index: 1;
+            }
+          }
+        }
+      }
+      .content-bg-image {
+        width: 100%;
+        .bg-image {
+          position: relative;
+          width: 100%;
+          max-width: 450px;
+          height: 400px;
+          z-index: 3;
+          overflow: hidden;
+          .images {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+    &.ltr {
+      .timeline-year {
+        text-align: right;
+      }
+      .content-text {
+        order: 2;
+        .content-title-body {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          margin-left: calc(100% - 450px);
+          .content-title {
+            align-items: flex-start;
+            overflow: hidden;
+          }
+        }
+      }
+      .content-bg-image {
+        order: 1;
+        display: flex;
+        justify-content: flex-start;
+      }
+    }
+    &.rtl {
+      .timeline-year {
+        text-align: left;
+      }
+      .content-text {
+        order: 1;
+        .content-title-body {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          text-align: right;
+          .content-title {
+            align-items: flex-end;
+            overflow: hidden;
+          }
+        }
+      }
+      .content-bg-image {
+        order: 2;
+        padding-left: 102px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 767px) and (min-width: 320px) {
+  .boga-timeline-item-root {
+    padding-bottom: 30px;
+    margin-bottom: -100px;
+    margin-top: -80px;
+    .boga-timeline-item-cont {
+      .timeline-line {
+        display: none;
+      }
+      .timeline-year {
+        transform: translateY(330px);
+        margin-bottom: -12px;
+        text-align: right !important;
+        div {
+          font-size: 90px;
+        }
+      }
+      .timeline-content-cont {
+        flex-direction: column;
+        .content-text {
+          order: 2;
+          .content-title-body {
+            padding: 20px 0 0;
+            display: flex;
+            text-align: left;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            > div {
+              margin-bottom: 25px;
+            }
+            .content-title {
+              align-items: flex-start;
+            }
+          }
+        }
+        .content-bg-image,
+        .content-text {
+          flex: 0 0 100%;
+          width: 100%;
+          padding-left: 0;
+        }
+        .content-bg-image {
+          order: 1;
+          .bg-image {
+            max-width: 100%;
+            height: 250px;
+          }
+        }
+      }
+      &.ltr {
+        .content-text {
+          .content-title-body {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

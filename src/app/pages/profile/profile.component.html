@@ -1,0 +1,67 @@
+<app-parallax [title]="title" [heroImage]="heroImage"></app-parallax>
+<div class="profile-cont-root">
+  <div class="profile-intro-content-cont">
+    <div class="left-title">
+      <h2 class="text-uppercase wow fadeIn">Corporate profile</h2>
+    </div>
+    <div class="profile-content-cont">
+      <div class="profile-left">
+        <div class="profile-title-desc">
+          <div class="profile-title">
+            <h2 class="wow fadeInUp2">Our Mision.</h2>
+            <div class="title-line wow lineInLeft"></div>
+          </div>
+          <div class="profile-description">
+            <div class="wow fadeInUp2">
+              <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto alias hic sit.
+              </div>
+              <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, officiis?
+              </div>
+              <div>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, nobis quia eos reprehenderit similique,
+                hic, perferendis repellendus consequuntur fugit ipsam culpa?
+              </div>
+              <div>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, sed.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="profile-bg-image">
+          <div class="bg-image overflow-h">
+            <div class="reveal-overlay wow boxInLeftOverlay"></div>
+            <div class="images" [ngStyle]="{'background-image': 'url(/assets/img/bg-sm-4.jpg)'}"></div>
+          </div>
+        </div>
+      </div>
+      <div class="profile-right">
+        <div class="profile-bg-image">
+          <div class="bg-image overflow-h">
+            <div class="reveal-overlay wow boxInLeftOverlay"></div>
+            <div class="images" [ngStyle]="{'background-image': 'url(/assets/img/bg-sm-5.jpg)'}"></div>
+          </div>
+        </div>
+        <div class="profile-title-desc">
+          <div class="profile-title">
+            <h2 class="wow fadeInUp2">Our Vision.</h2>
+            <div class="title-line wow lineInRight"></div>
+          </div>
+          <div class="profile-description">
+            <div class="wow fadeInUp2">
+              <div>
+                To gain reputation for offering an inspiring experience that enriches the average lifestyle.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="profile-timeline-cont" style="padding-bottom: 120px;">
+  <ng-container *ngFor="let item of timeline; let i = index;">
+    <boga-timeline-item [item]="item" [rtl]="i % 2 == 0 ? true : false"></boga-timeline-item>
+  </ng-container>
+</div>
