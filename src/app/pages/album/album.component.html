@@ -1,0 +1,122 @@
+<app-parallax [title]="title" [heroImage]="heroImage"></app-parallax>
+<div class="boga-album-intro-root ltr is-dark">
+  <div class="boga-cont">
+    <div class="boga-album-intro-item-cont ltr">
+      <div class="album-intro-content-cont">
+        <div class="content-text">
+          <div class="content-title-body">
+            <div class="content-title overflow-h">
+              <h2 class="wow fadeInUp2" data-wow-duration="0.6s" data-wow-delay="0.2s">Lorems</h2>
+              <div class="line wow lineInLeft" data-wow-duration="1s" data-wow-delay="0.3s"></div>
+            </div>
+            <div class="content-body overflow-h">
+              <p class="wow fadeInUp2" data-wow-duration="0.6s" data-wow-delay="0.2s">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo harum quod totam ut nobis? Eum quos
+                necessitatibus facilis exercitationem distinctio adipisci minima, fugit quo repellendus voluptatibus
+                quia ullam doloribus repellat?
+              </p>
+            </div>
+            <div class="content-link overflow-h pb-4">
+              <a href="javascript:void(0);" class="b-btn b-btn-white wow fadeInUp2" data-wow-duration="0.6s"
+                data-wow-delay="0.2s">
+                <span class="btn-over btn-over-white"></span>
+                <span class="text">Link</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="content-bg-image">
+          <div class="bg-image wow boxInLeft overflow-h" data-wow-duration="1s">
+            <div class="reveal-overlay wow boxInLeftOverlay" data-wow-duration="1s" data-wow-delay="0.5s"></div>
+            <div class="images" [ngStyle]="{'background-image': introImage}"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="boga-album-intro-root rtl is-light">
+  <div class="boga-cont">
+    <div class="boga-album-intro-item-cont rtl">
+      <div class="album-intro-content-cont">
+        <div class="content-text">
+          <div class="content-title-body">
+            <div class="content-title overflow-h">
+              <h2 class="wow fadeInUp2" data-wow-duration="0.6s" data-wow-delay="0.2s">Lorems</h2>
+              <div class="line wow lineInLeft" data-wow-duration="1s" data-wow-delay="0.3s"></div>
+            </div>
+            <div class="content-body overflow-h">
+              <p class="wow fadeInUp2" data-wow-duration="0.6s" data-wow-delay="0.2s">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo harum quod totam ut nobis? Eum quos
+                necessitatibus facilis exercitationem distinctio adipisci minima, fugit quo repellendus voluptatibus
+                quia ullam doloribus repellat?
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="content-bg-image">
+          <div class="bg-image wow boxInLeft overflow-h" data-wow-duration="1s">
+            <div class="reveal-overlay wow boxInLeftOverlay" data-wow-duration="1s" data-wow-delay="0.5s"></div>
+            <div class="images" [ngStyle]="{'background-image': introImage}"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="boga-intro-title overflow-h">
+  <h3 class="text-uppercase wow fadeInUp2" data-wow-duration="0.6s" data-wow-delay="0.2s">gallery</h3>
+</div>
+<div class="boga-cont boga-core-thumbnail-cont">
+  <ng-container *ngFor="let item of galleryItems; let i = index">
+    <div class="boga-thumbnail-cont is-gallery wow fadeInUp" data-wow-duration="1s"
+      attr.data-wow-delay="{{(i + 1) * 0.2}}s">
+      <div class="boga-thumbnail" (click)="isPopUpActive = true">
+        <div class="thumbnail-bg-image">
+          <img [src]="item.image">
+        </div>
+        <div class="thumbnail-title-cont" *ngIf="item.title">
+          <div class="thumbnail-title">
+            <h2>{{item.title}}</h2>
+          </div>
+          <div class="thumbnail-description">
+            <h2>{{item.title}}</h2>
+          </div>
+        </div>
+        <div class="thumbnail-overlay"></div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+<div class="boga-popup-root" [ngClass]="{'active': isPopUpActive}">
+  <div class="popup-cont">
+    <div class="popup-overlay"></div>
+    <button class="next-prev-buttons next disabled">
+      <svg viewBox="0 0 100 100">
+        <path class="arrow" d="M 10,50 L 60,100 L 65,95 L 20,50  L 65,5 L 60,0 Z"
+          transform="translate(100, 100) rotate(180) "></path>
+      </svg>
+    </button>
+    <button class="next-prev-buttons prev">
+      <svg viewBox="0 0 100 100">
+        <path class="arrow" d="M 10,50 L 60,100 L 65,95 L 20,50  L 65,5 L 60,0 Z"></path>
+      </svg>
+    </button>
+    <div class="close" (click)="isPopUpActive = false">
+      <svg viewBox="0 0 15.642 15.642">
+        <path
+          d="M8.882 7.821l6.541-6.541A.75.75 0 1 0 14.362.219L7.821 6.76 1.28.22A.75.75 0 1 0 .219 1.281L6.76 7.822l-6.54 6.54a.75.75 0 0 0 1.06 1.061l6.541-6.541 6.541 6.541a.75.75 0 1 0 1.06-1.061l-6.54-6.541z"
+          fill-rule="evenodd"></path>
+      </svg>
+    </div>
+    <div class="block-content-wrap carousel">
+      <div class="columns content-item">
+        <figure class="column picture">
+          <div class="wrap">
+            <img [src]="currentItem.image">
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>

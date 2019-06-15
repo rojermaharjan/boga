@@ -6,69 +6,6 @@ $accent: #b01f24;
   background: $accent;
   margin-top: 20px;
 }
-.b-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  max-width: 125px;
-  min-height: 35px;
-  border: 1px solid $accent;
-  .btn-over {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-    pointer-events: none;
-    transition: transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
-    &:after,
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: $accent;
-    }
-    &:before {
-      transform: translate3d(-100%, 0, 0);
-      opacity: 0;
-    }
-    &:after {
-      transform: translate3d(100%, 0, 0);
-      opacity: 1;
-      transition: transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-  }
-  .text {
-    position: relative;
-    line-height: 1.6;
-    color: #4a4a4a;
-    font-size: 12px;
-    z-index: 1;
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-  }
-  &:hover {
-    .btn-over {
-      &:before {
-        transform: translateZ(0);
-        opacity: 1;
-        transition: transform 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
-      }
-      &:after {
-        transform: translateZ(0);
-        opacity: 0;
-        transition: none;
-      }
-    }
-    .text {
-      color: #fff;
-    }
-  }
-}
 .bg-cont {
   flex: 0 0 60%;
   width: 60%;

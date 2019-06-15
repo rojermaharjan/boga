@@ -17,13 +17,19 @@
       </ul>
       <ul class="sidebar-menus-cont p-0">
         <li>
-          <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" title="Home" (click)="toggleSidebar.emit()">
+          <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" title="Home"
+            (click)="toggleSidebar.emit()">
             <span>Home</span>
           </a>
         </li>
         <li>
           <a routerLink="/profile" routerLinkActive="active" title="Profile" (click)="toggleSidebar.emit()">
             <span>Profile</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/album" routerLinkActive="active" title="Gallery" (click)="toggleSidebar.emit()">
+            <span>Album</span>
           </a>
         </li>
       </ul>
